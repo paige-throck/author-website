@@ -1,10 +1,9 @@
 <template>
-  <div> Author </div>
+<div>Books</div>
 </template>
-
 <script>
 export default {
-  name: 'Author',
+  name: 'Books',
   components: {}
 }
 </script>
