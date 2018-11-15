@@ -1,31 +1,22 @@
 <template>
-<nav class="navbar" role="navigation" aria-label="main navigation">
-
+<nav class="navbar is-fixed-top is-black">
   <div class="navbar-brand">
-    <a class="navbar-item">
-      <router-link to="/">Susan Throckmorton</router-link>
-    </a>
-    <a @click="makeBurger" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" v-bind:class="{ 'is-active': activator }">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu" id="navMenu" v-bind:class="{ 'is-active': activator }">
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <router-link to="/">Home</router-link>
-      </div>
-      <div class="navbar-item ">
-        <router-link to="/author">About the Author</router-link>
-      </div>
-      <div class="navbar-item">
-        <router-link to="/books">Books</router-link>
-      </div>
-
+    <router-link to="/" class="navbar-item main-nav-link">Susan Throckmorton</router-link>
+    <div @click="openNav" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" v-bind:class="{ 'is-active': activator }">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   </div>
-
+  <div class="navbar-menu" id="navMenu" v-bind:class="{ 'is-active': activator }">
+    <div class="navbar-start">
+    </div>
+    <div class="navbar-end">
+      <router-link class="navbar-item" to="/">Home</router-link>
+      <router-link class="navbar-item" to="/author">Author</router-link>
+      <router-link class="navbar-item" to="/books">Books</router-link>
+    </div>
+  </div>
 </nav>
 </template>
 
@@ -38,7 +29,7 @@ export default {
     }
   },
   methods: {
-    makeBurger() {
+    openNav() {
       this.activator = !this.activator
       return this.activator
     }

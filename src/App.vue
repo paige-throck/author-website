@@ -1,7 +1,16 @@
 <template>
 <div id="app">
   <Nav />
-  <router-view></router-view>
+  <section class="hero is-black is-fullheight">
+    <div class="hero-head">
+
+    </div>
+    <div class="hero-body">
+      <div class="container">
+        <router-view></router-view>
+      </div>
+    </div>
+  </section>
 </div>
 </template>
 

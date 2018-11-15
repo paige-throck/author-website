@@ -1,35 +1,41 @@
 <template>
-<div>
-  <section class="hero is-info is-large">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        Large title
-      </h1>
-      <h2 class="subtitle">
-        Large subtitle
-      </h2>
+<div id="home">
+  <div class="column"></div>
+  <div class="column">
+  <div class="tile">
+    <div class="tile is-vertical is-parent">
+      <div class="tile is-child box">
+        <figure class="image is-3by2">
+          <img src="../assets/mayan-2.jpg">
+        </figure>
+      </div>
+      <div class="tile is-child box">
+        <figure class="image is-3by2">
+          <img src="../assets/saint-michel-2.jpg">
+        </figure>
+      </div>
+    </div>
+    <div class="tile is-vertical is-parent">
+      <div class="tile is-child box">
+        <figure class="image is-3by2">
+          <img src="../assets/saint-michel.jpg">
+        </figure>
+      </div>
+      <div class="tile is-child box">
+        <figure class="image is-3by2">
+          <img src="../assets/mayan.jpg">
+        </figure>
+      </div>
     </div>
   </div>
-</section>
-<section class="hero is-success is-fullheight">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        Fullheight title
-      </h1>
-      <h2 class="subtitle">
-        Fullheight subtitle
-      </h2>
-    </div>
-  </div>
-</section>
+</div>
+  <div class="column"></div>
 </div>
 </template>
 
 <script>
 export default {
   name: 'Home',
-  components: { }
+  components: {}
 }
 </script>

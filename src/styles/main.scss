@@ -1,4 +1,33 @@
-$blueColor: blue;
+$cursiveFont: 'Dancing Script', cursive;
+
+
 #app {
-  background: $blueColor;
+
+}
+
+.navbar-item.main-nav-link, .navbar-link {
+  font-family: $cursiveFont;
+  font-size: 35px;
+  padding-left: 20px;
+}
+
+.navbar-item, .navbar-link  {
+  font-family: $cursiveFont;
+  font-size: 20px;
+}
+
+
+.hero.is-black .navbar-item, .hero.is-black .navbar-link {
+  color:white;
+  &:hover {
+    color:#9e0030;
+  }
+}
+
+.router-link-active {
+  color:#9e0030;
+}
+
+div.tile {
+  padding: 0px;
 }
