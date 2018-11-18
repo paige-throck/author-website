@@ -1,33 +1,27 @@
 $cursiveFont: 'Dancing Script', cursive;
 
+#app {}
 
-#app {
-
-}
-
-.navbar-item.main-nav-link, .navbar-link {
+.navbar-item.main-nav-link {
   font-family: $cursiveFont;
   font-size: 35px;
   padding-left: 20px;
-}
-
-.navbar-item, .navbar-link  {
-  font-family: $cursiveFont;
-  font-size: 20px;
-}
-
-
-.hero.is-black .navbar-item, .hero.is-black .navbar-link {
-  color:white;
   &:hover {
     color:#9e0030;
   }
 }
 
-.router-link-active {
-  color:#9e0030;
+.navbar-item.secondary-nav-link {
+  font-family: $cursiveFont;
+  font-size: 20px;
+
+  &:hover {
+    background: white;
+    color:#9e0030;
+  }
 }
 
+
 div.tile {
-  padding: 0px;
+  padding: 0;
 }

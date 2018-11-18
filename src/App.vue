@@ -1,7 +1,7 @@
 <template>
 <div id="app">
   <Nav />
-  <section class="hero is-black is-fullheight">
+  <section class="hero is-fullheight">
     <div class="hero-head">
 
     </div>
