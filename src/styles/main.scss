@@ -1,13 +1,42 @@
 $cursiveFont: 'Dancing Script', cursive;
+$app-color: black;
+$highlight: white;
 
-#app {}
+#app {
+  background: $app-color;
+}
+
+div a {
+  color:#4a4a4a;
+  &:hover {
+    color: $highlight;
+  }
+  cursor: pointer;
+}
+
+
+nav.navbar {
+  background: $app-color;
+  border-color: $highlight;
+}
+
+h1.title {
+  font-family: $cursiveFont;
+  // color: white;
+}
 
 .navbar-item.main-nav-link {
   font-family: $cursiveFont;
-  font-size: 35px;
+  font-size: 45px;
   padding-left: 20px;
+  color: $highlight;
+
+  &:active {
+    color: $highlight;
+  }
+
   &:hover {
-    color:#9e0030;
+    color: $highlight;
   }
 }
 
@@ -16,12 +45,115 @@ $cursiveFont: 'Dancing Script', cursive;
   font-size: 20px;
 
   &:hover {
-    background: white;
-    color:#9e0030;
+    background: $app-color;
+    color: $highlight;
+  }
+
+  &:active {
+    background: $app-color;
+    color: $highlight;
   }
 }
 
+div#navMenu.navbar-menu {
+  background: black;
+}
 
 div.tile {
   padding: 0;
+}
+// Testing
+
+.flipper {
+  margin: 0 auto 10px;
+}
+
+.flipper,
+.tile {
+  cursor: pointer;
+  margin: 0 auto 10px;
+}
+
+.back .button {
+  padding: 10px 20px;
+}
+
+.is-centered-ver-hor {
+  height: 100px;
+  width: 50%;
+  padding: 20px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+/* 3D FLIP CARD */
+figure.image.home > img {
+  width: 253px;
+  height: 169px;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.flipper.flip {
+  transform: rotateY(180deg);
+}
+
+.back,
+.front {
+  display: block;
+  backface-visibility: hidden;
+}
+
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px #9e9e9e;
+}
+
+img.susan {
+  width: 612px;
+  height: 350px;
+  text-align: center;
+}
+
+.section {
+  text-align: center;
+}
+
+img.books {
+  margin: 20px;
+}
+
+section.books {
+  text-align: left;
+  margin-top: 25px;
 }

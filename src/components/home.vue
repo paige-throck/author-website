@@ -1,142 +1,240 @@
 <script>
-import Modal from './Modal'
 export default {
   name: 'Home',
-  components: {
-    Modal
-  },
+  components: {},
   data() {
     return {
-      isModalVisible: false,
-      images: [{
-          url: require('../assets/san-fran-2.jpg')
+      postsOne: [{
+          id: 1,
+          flip: false,
+          image: require('../assets/san-fran-2.jpg')
         },
         {
-          url: require('../assets/saint-michel-2.jpg')
+          id: 2,
+          flip: false,
+          image: require('../assets/saint-michel-2.jpg')
         },
         {
-          url: require('../assets/skellig-2.jpg')
-        },
-
-        {
-          url: require('../assets/mayan-2.jpg')
-        },
-        {
-          url: require('../assets/warrior.jpg')
-        },
-        {
-          url: require('../assets/dorval.jpg')
+          id: 3,
+          flip: false,
+          image: require('../assets/skellig-2.jpg')
+        }
+      ],
+      postsTwo: [{
+          id: 1,
+          flip: false,
+          image: require('../assets/mayan-2.jpg')
         },
         {
-          url: require('../assets/skelling-3.jpg')
+          id: 2,
+          flip: false,
+          image: require('../assets/warrior.jpg')
         },
         {
-          url: require('../assets/saint-michel.jpg')
+          id: 3,
+          flip: false,
+          image: require('../assets/dorval.jpg')
+        }
+      ],
+      postsThree: [{
+          id: 1,
+          flip: false,
+          image: require('../assets/skelling-3.jpg')
         },
         {
-          url: require('../assets/san-fran.jpg')
+          id: 2,
+          flip: false,
+          image: require('../assets/saint-michel.jpg')
         },
         {
-          url: require('../assets/merida.jpg')
+          id: 3,
+          flip: false,
+          image: require('../assets/san-fran.jpg')
+        }
+      ],
+      postsFour: [{
+          id: 1,
+          flip: false,
+          image: require('../assets/merida.jpg')
         },
         {
-          url: require('../assets/mayan.jpg')
+          id: 2,
+          flip: false,
+          image: require('../assets/mayan.jpg')
         },
         {
-          url: require('../assets/cenote.jpg')
-        },
+          id: 3,
+          flip: false,
+          image: require('../assets/cenote.jpg')
+        }
       ]
     }
   },
   methods: {
-    showModal()
-    {
-      this.isModalVisible = true
+    flipOne: function(item) {
+      this.postsOne.filter(function(v, k) {
+        return v.id != item.id;
+      }).forEach(function(v, k) {
+        v.flip = false;
+      })
+      window.setTimeout(function(v, k) {
+        item.flip = !item.flip;
+      }, 100)
     },
-    closeModal() {
-      this.isModalVisible = false
-    }
-  },
+    flipTwo: function(item) {
+      this.postsTwo.filter(function(v, k) {
+        return v.id != item.id;
+      }).forEach(function(v, k) {
+        v.flip = false;
+      })
+      window.setTimeout(function(v, k) {
+        item.flip = !item.flip;
+      }, 100)
+    },
+    flipThree: function(item) {
+      this.postsThree.filter(function(v, k) {
+        return v.id != item.id;
+      }).forEach(function(v, k) {
+        v.flip = false;
+      })
+      window.setTimeout(function(v, k) {
+        item.flip = !item.flip;
+      }, 100)
+    },
+    flipFour: function(item) {
+      this.postsFour.filter(function(v, k) {
+        return v.id != item.id;
+      }).forEach(function(v, k) {
+        v.flip = false;
+      })
+      window.setTimeout(function(v, k) {
+        item.flip = !item.flip;
+      }, 100)
+    },
+  }
 }
 </script>
 
 <template>
 <div id="home">
-  <Modal v-show="isModalVisible" @close="closeModal" />
-  <!-- <button type="button" class="btn btn-info" @click="showModal">Show modal</button> -->
-  <div class="column"></div>
-  <div class="column">
-    <div class="tile">
-      <div class="tile is-vertical is-parent">
-        <div class="tile is-child box" @click="showModal">
-          <figure class="image is-3by2">
-            <img src="../assets/san-fran-2.jpg">
-          </figure>
-        </div>
-        <div class="tile is-child box">
-          <figure class="image is-3by2">
-            <img src="../assets/saint-michel-2.jpg">
-          </figure>
-        </div>
-        <div class="tile is-child box">
-          <figure class="image is-3by2">
-            <img src="../assets/skellig-2.jpg">
-          </figure>
-        </div>
+  <div class="columns" style="margin-top:40px;">
+    <div class="column">
+      <div v-for="item in postsOne" class="flipper" v-bind:class="{'flip': item.flip}" v-on:click="flipOne(item)" style="text-align:center;">
+        <figure class="front">
+          <div class="tile">
+
+            <figure class="image home">
+              <img class="home" v-bind:src="item.image" alt="">
+            </figure>
+
+          </div>
+        </figure>
+        <figure class="back">
+          <div class="tile">
+            <div class="card-content">
+              <div class="is-centered-ver-hor ">
+                <div class="media">
+                  <div class="media-left">
+                  </div>
+                  <div class="media-content">
+                    <p class="title is-5">{{item.name}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </figure>
       </div>
-      <div class="tile is-vertical is-parent">
-        <div class="tile is-child box">
-          <figure class="image is-3by2">
-            <img src="../assets/mayan-2.jpg">
-          </figure>
-        </div>
-        <div class="tile is-child box">
-          <figure class="image is-3by2">
-            <img src="../assets/warrior.jpg">
-          </figure>
-        </div>
-        <div class="tile is-child box">
-          <figure class="image is-3by2">
-            <img src="../assets/dorval.jpg">
-          </figure>
-        </div>
+    </div>
+    <div class="column">
+      <div v-for="item in postsTwo" class="flipper" v-bind:class="{'flip': item.flip}" v-on:click="flipTwo(item)">
+        <figure class="front">
+          <div class="tile">
+
+            <figure class="image home">
+              <img v-bind:src="item.image" alt="">
+            </figure>
+
+          </div>
+        </figure>
+        <figure class="back">
+          <div class="tile">
+            <div class="card-content">
+              <div class="is-centered-ver-hor ">
+                <div class="media">
+                  <div class="media-left">
+                  </div>
+                  <div class="media-content">
+                    <p class="title is-5">{{item.name}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </figure>
       </div>
-      <div class="tile is-vertical is-parent">
-        <div class="tile is-child box">
-          <figure class="image is-3by2">
-            <img src="../assets/skelling-3.jpg">
-          </figure>
-        </div>
-        <div class="tile is-child box">
-          <figure class="image is-3by2">
-            <img src="../assets/saint-michel.jpg">
-          </figure>
-        </div>
-        <div class="tile is-child box">
-          <figure class="image is-3by2">
-            <img src="../assets/san-fran.jpg">
-          </figure>
-        </div>
+    </div>
+    <div class="column">
+      <div v-for="item in postsThree" class="flipper" v-bind:class="{'flip': item.flip}" v-on:click="flipThree(item)">
+        <figure class="front">
+          <div class="tile">
+
+            <figure class="image home">
+              <img v-bind:src="item.image" alt="">
+            </figure>
+
+          </div>
+        </figure>
+        <figure class="back">
+          <div class="tile">
+            <div class="card-content">
+              <div class="is-centered-ver-hor ">
+                <div class="media">
+                  <div class="media-left">
+                  </div>
+                  <div class="media-content">
+                    <p class="title is-5">{{item.name}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </figure>
       </div>
-      <div class="tile is-vertical is-parent">
-        <div class="tile is-child box">
-          <figure class="image is-3by2">
-            <img src="../assets/merida.jpg">
-          </figure>
-        </div>
-        <div class="tile is-child box">
-          <figure class="image is-3by2">
-            <img src="../assets/mayan.jpg">
-          </figure>
-        </div>
-        <div class="tile is-child box">
-          <figure class="image is-3by2">
-            <img src="../assets/cenote.jpg">
-          </figure>
-        </div>
+    </div>
+    <div class="column">
+      <div v-for="item in postsFour" class="flipper" v-bind:class="{'flip': item.flip}" v-on:click="flipFour(item)">
+        <figure class="front">
+          <div class="tile">
+
+            <figure class="image home">
+              <img v-bind:src="item.image" alt="">
+            </figure>
+
+          </div>
+        </figure>
+        <figure class="back">
+          <div class="tile">
+            <div class="card-content">
+              <div class="is-centered-ver-hor ">
+                <div class="media">
+                  <div class="media-left">
+                  </div>
+                  <div class="media-content">
+                    <p class="title is-5">{{item.name}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </figure>
       </div>
     </div>
   </div>
-  <div class="column"></div>
+  <section class="section">
+      <div>Looking to Purchase?</div>
+      <div><a href="https://www.amazon.com/Mayan-Manifesto-Susan-S-Throckmorton/dp/0615588050">The Mayan Manifesto</a></div>
+      <div><a href="https://www.amazon.com/Accord-Susan-S-Throckmorton/dp/0997065818">The Accord</a></div>
+  </section>
 </div>
 </template>
