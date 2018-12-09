@@ -157,3 +157,11 @@ section.books {
   text-align: left;
   margin-top: 25px;
 }
+
+a.button.is-outlined.read-more {
+  background: $app-color;
+  margin-top:30px;
+  &:hover {
+    color:$highlight;
+  }
+}

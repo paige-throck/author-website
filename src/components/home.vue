@@ -233,8 +233,8 @@ export default {
   </div>
   <section class="section">
       <div>Looking to Purchase?</div>
-      <div><a href="https://www.amazon.com/Mayan-Manifesto-Susan-S-Throckmorton/dp/0615588050">The Mayan Manifesto</a></div>
-      <div><a href="https://www.amazon.com/Accord-Susan-S-Throckmorton/dp/0997065818">The Accord</a></div>
+      <div><a href="https://www.amazon.com/Mayan-Manifesto-Susan-S-Throckmorton/dp/0615588050" target="_blank">The Mayan Manifesto</a></div>
+      <div><a href="https://www.amazon.com/Accord-Susan-S-Throckmorton/dp/0997065818" target="_blank">The Accord</a></div>
   </section>
 </div>
 </template>

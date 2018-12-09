@@ -4,6 +4,8 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import Author from '@/components/Author'
 import Books from '@/components/Books'
+import Mayan from '@/components/Mayan'
+import Accord from '@/components/Accord'
 
 Vue.use(Router)
 
@@ -24,6 +26,16 @@ export default new Router({
       path: '/books',
       name: 'Books',
       component: Books
+    },
+    {
+      path: '/books/mayan',
+      name: 'Mayan',
+      component: Mayan
+    },
+    {
+      path: '/books/accord',
+      name: 'Accord',
+      component: Accord
     }
   ]
 })
