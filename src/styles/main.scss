@@ -7,13 +7,13 @@ $highlight: white;
 }
 
 div a {
-  color:#4a4a4a;
+  color: #4a4a4a;
+
   &:hover {
     color: $highlight;
   }
   cursor: pointer;
 }
-
 
 nav.navbar {
   background: $app-color;
@@ -24,6 +24,9 @@ h1.title {
   font-family: $cursiveFont;
   // color: white;
 }
+
+
+// Navigation
 
 .navbar-item.main-nav-link {
   font-family: $cursiveFont;
@@ -59,10 +62,11 @@ div#navMenu.navbar-menu {
   background: black;
 }
 
+// Homepage
+
 div.tile {
   padding: 0;
 }
-// Testing
 
 .flipper {
   margin: 0 auto 10px;
@@ -74,31 +78,38 @@ div.tile {
   margin: 0 auto 10px;
 }
 
-.back .button {
-  padding: 10px 20px;
+figure.back {
+  padding: 24px;
+  position: absolute;
+  top: 0;
+  right:0;
 }
 
-.is-centered-ver-hor {
-  height: 100px;
-  width: 50%;
-  padding: 20px;
-  position: absolute;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-/* 3D FLIP CARD */
+// Front Image
 figure.image.home > img {
-  width: 253px;
-  height: 169px;
+  width: 298px;
+  height: 198px;
 
   &:hover {
     transform: scale(1.1);
+    padding: 5px;
   }
 }
 
+
+.back,
+.front {
+  display: block;
+  backface-visibility: hidden;
+  margin: 10px;
+}
+
+div.content {
+  margin-bottom: 50px;
+  font-size: 10px;
+  text-align: center;
+}
+// Animations
 .flipper {
   transition: 0.6s;
   transform-style: preserve-3d;
@@ -109,15 +120,8 @@ figure.image.home > img {
   transform: rotateY(180deg);
 }
 
-.back,
-.front {
-  display: block;
-  backface-visibility: hidden;
-}
-
 .front {
   z-index: 2;
-  /* for firefox 31 */
   transform: rotateY(0deg);
 }
 
@@ -139,6 +143,8 @@ figure.image.home > img {
   -webkit-box-shadow: inset 0 0 6px #9e9e9e;
 }
 
+
+// Author and Book Pages
 img.susan {
   width: 612px;
   height: 350px;
@@ -155,13 +161,14 @@ img.books {
 
 section.books {
   text-align: left;
-  margin-top: 25px;
+  margin-top: 30px;
 }
 
 a.button.is-outlined.read-more {
   background: $app-color;
-  margin-top:30px;
+  margin-top: 30px;
+
   &:hover {
-    color:$highlight;
+    color: $highlight;
   }
 }
