@@ -6,6 +6,10 @@ $highlight: white;
   background: $app-color;
 }
 
+#books {
+  // margin-top: 20px;
+}
+
 div a {
   color: #4a4a4a;
 
@@ -51,15 +55,16 @@ h1.title {
     background: $app-color;
     color: $highlight;
   }
+}
 
-  &:active {
-    background: $app-color;
-    color: $highlight;
-  }
+.navbar-item.secondary-nav-link.router-link-exact-active {
+  background: $app-color;
+  color: $highlight;
 }
 
 div#navMenu.navbar-menu {
   background: black;
+  padding: 5px;
 }
 
 // Homepage
@@ -69,33 +74,36 @@ div.tile {
 }
 
 .flipper {
-  margin: 0 auto 10px;
+  margin: 20px auto 10px;
 }
 
 .flipper,
 .tile {
   cursor: pointer;
-  margin: 0 auto 10px;
+  padding-bottom:24px;
 }
 
 figure.back {
-  padding: 24px;
+  // padding: 24px;
   position: absolute;
   top: 0;
   right:0;
+  // width:250px;
 }
 
 // Front Image
 figure.image.home > img {
   width: 298px;
   height: 198px;
-
   &:hover {
     transform: scale(1.1);
     padding: 5px;
   }
 }
 
+img.card-image {
+  margin-right:0px !important;
+}
 
 .back,
 .front {
@@ -106,9 +114,42 @@ figure.image.home > img {
 
 div.content {
   margin-bottom: 50px;
-  font-size: 10px;
+  font-size: 12px;
+  text-align: center;
+  color:$highlight;
+  width:100%;
+}
+
+// Author and Book Pages
+img.susan {
+  width: 612px;
+  height: 350px;
   text-align: center;
 }
+
+.section {
+  text-align: center;
+}
+
+img.books {
+  margin: 20px;
+}
+
+section.books {
+  text-align: left;
+  margin-top: 30px;
+}
+
+a.button.is-outlined.read-more {
+  background: $app-color;
+  margin-top: 30px;
+
+  &:hover {
+    color: $highlight;
+  }
+}
+
+
 // Animations
 .flipper {
   transition: 0.6s;
@@ -144,31 +185,25 @@ div.content {
 }
 
 
-// Author and Book Pages
-img.susan {
-  width: 612px;
-  height: 350px;
-  text-align: center;
+/* ==========================================================================
+Mobile Screen and Ipad Sizing
+========================================================================== */
+@media (min-width: 769px) and (max-width: 1089px) {
+
+  figure.image.home > img  {
+    // width: 200px;
+    // height: 180px;
+  }
+
 }
 
-.section {
-  text-align: center;
-}
+@media (max-width: 769px) {
+  img.card-image {
+    text-align: center;
+  }
 
-img.books {
-  margin: 20px;
-}
-
-section.books {
-  text-align: left;
-  margin-top: 30px;
-}
-
-a.button.is-outlined.read-more {
-  background: $app-color;
-  margin-top: 30px;
-
-  &:hover {
-    color: $highlight;
+  figure.image.home  {
+    display: flex;
+    justify-content: center;
   }
 }

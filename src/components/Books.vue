@@ -7,7 +7,7 @@ export default {
 
 <template>
 <div id="books">
-  <div class="columns" style="margin-top:20px;">
+  <div class="columns" style="margin-top:30px;">
     <div class="column">
       <img class="books" src="../assets/manifesto.jpg" style="text-align:center;">
       <h6 style="margin-left:20px; color:white;">Purchase Book on</h6>

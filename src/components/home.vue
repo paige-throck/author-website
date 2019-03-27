@@ -11,7 +11,8 @@ export default {
           quote: `“She lived well in a beautifully renovated 1920’s Victorian on Nob Hill, she ate a
 the best restaurants, she wore designer clothes, and she rode in a chauffeured
 Bentley. Alex had grown up with everything she needed, and then some.”
--The Accord`
+
+- The Accord`
         },
         {
           id: 2,
@@ -20,26 +21,29 @@ Bentley. Alex had grown up with everything she needed, and then some.”
           quote: `“Determined to complete his journey as quickly as possible, and blessed with
 agreeable weather, Bernard pressed on through the deepening dusk until he
 reached the shoreline abutting the bay in which the ‘wonder of the medieval
-world’ awaited him, just as the first evening stars began to glisten in the night
-sky. Squinting, he could just make out the abbaye’s outline against the ink
-stained horizon. But a short while later, he sat watching in awe as the moon rose
+world’ awaited him, ...... he sat watching in awe as the moon rose
 in the night sky, sending rays of light dancing across the water, and illuminating
 the pale colored stone of the abbaye to a beautiful silvery glow.”
 
--The Accord`
+- The Accord`
         },
         {
           id: 3,
           flip: false,
           image: require('../assets/skellig-2.jpg'),
-          quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-
+          quote: `“Despite their situation, both Jeff and Simône found themselves admiring the beauty of their surroundings, as they followed the limestone path circling the base of the island. After passing under a canopied area, no doubt erected to protect tourists from potential rock fall from above, and by a helicopter pad balanced precariously on a cliff above the water, they reached the bottom of the 661 steep stone stairs, which Jeff knew had been erected starting some 1500 years before by Augustinian monks who had chosen to live in the harshest of conditions on this remote island. The steps, in most areas about 4 feet wide but only a foot or less deep, stretched up above them before turning to the right and vanishing out of sight.”
+          - The Accord`
         }
       ],
-      postsTwo: [{
+      postsTwo: [{ 
           id: 1,
           flip: false,
-          image: require('../assets/mayan-2.jpg')
+          image: require('../assets/mayan-2.jpg'),
+          quote: `“Drops of blood splattered his face as the king’s twirling became more frenzied. Yet, the young Mayan warrior, clad only in a ceremonial loincloth below
+a torso adorned with brightly-colored body-paint honoring the Lords of Death on this festival of the Rising Sun, stood motionless, ...... Soon, he knew, the Vision Serpent would come to his King, the Great Jaguar
+Paw, insuring the success of the harvests for another year…”
+- The Mayan Manifesto
+`
         },
         {
           id: 2,
@@ -133,7 +137,7 @@ the pale colored stone of the abbaye to a beautiful silvery glow.”
 
 <template>
 <div id="home">
-  <div class="columns" style="margin-top:40px;">
+  <div class="columns" style="margin-top:50px;">
 
     <div class="column">
       <div v-for="item in postsOne" class="flipper" v-bind:class="{'flip': item.flip}" v-on:click="flipOne(item)" style="text-align:center;">
@@ -141,7 +145,7 @@ the pale colored stone of the abbaye to a beautiful silvery glow.”
         <figure class="front">
           <div class="tile">
             <figure class="image home">
-              <img class="home" v-bind:src="item.image" alt="">
+              <img class="card-image" v-bind:src="item.image" alt="">
             </figure>
           </div>
         </figure>
@@ -160,7 +164,7 @@ the pale colored stone of the abbaye to a beautiful silvery glow.”
         <figure class="front">
           <div class="tile">
             <figure class="image home">
-              <img class="home" v-bind:src="item.image" alt="">
+              <img class="card-image" v-bind:src="item.image" alt="">
             </figure>
           </div>
         </figure>
@@ -178,7 +182,7 @@ the pale colored stone of the abbaye to a beautiful silvery glow.”
         <figure class="front">
           <div class="tile">
             <figure class="image home">
-              <img class="home" v-bind:src="item.image" alt="">
+              <img class="card-image" v-bind:src="item.image" alt="">
             </figure>
           </div>
         </figure>
@@ -196,7 +200,7 @@ the pale colored stone of the abbaye to a beautiful silvery glow.”
         <figure class="front">
           <div class="tile">
             <figure class="image home">
-              <img class="home" v-bind:src="item.image" alt="">
+              <img class="card-image" v-bind:src="item.image" alt="">
             </figure>
           </div>
         </figure>
